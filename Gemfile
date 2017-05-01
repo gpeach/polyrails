@@ -45,6 +45,8 @@ group :development, :test do
   gem 'byebug', platform: :mri
   gem 'spinach'
   gem 'capybara'
+  gem 'selenium-webdriver'
+  gem 'capybara-webkit'
 end
 
 group :development do

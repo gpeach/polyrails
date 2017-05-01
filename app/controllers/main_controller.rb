@@ -1,5 +1,5 @@
 class MainController < ApplicationController
   def index
-    render template: 'main/index'
+    render 'main/index'
   end
 end

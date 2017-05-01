@@ -1,0 +1,32 @@
+<style>
+    body {
+        background: #e51c23;
+        color: #fff;
+        margin: 0;
+        padding: 0;
+        background-image: url('<%= image_url("fwbg.png") %>');
+    }
+    .searchBar {
+        background: grey;
+        margin: 8px auto;
+        width: 300px;
+    }
+    input {
+        text-align: center;
+        width: 100%; 
+        height: 30px; 
+        font-size: 20px;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    .results {
+        margin: 1em;
+    }
+</style>
+<template is="dom-bind">
+    <div class="searchBar">
+        <input type='text' placeholder="search by strain" value="{{strain::change}}">
+    </div>
+    <div class="results">
+        <gpeach-polymer-training strain="{{strain}}"></gpeach-polymer-training>
+    </div>
+</template>

@@ -44,9 +44,15 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
   gem 'spinach'
+  gem 'spinach-rails'
   gem 'capybara'
   gem 'selenium-webdriver'
   gem 'capybara-webkit'
+  gem 'capybara-screenshot'
+  gem 'database_cleaner'
+  gem 'simplecov'
+  gem 'rspec-rails'
+  gem 'factory_girl'
 end
 
 group :development do

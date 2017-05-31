@@ -45,6 +45,9 @@
         }
     </style>
     <template>
+<!--        <script>
+            alert('poly start');
+        </script>-->
         <iron-ajax
             auto
             url="{{url}}"
@@ -53,6 +56,9 @@
             debounce-duration="300">
         </iron-ajax>
         <template is="dom-repeat" items="{{response.data}}">
+<!--            <script>
+            alert('poly resp');
+        </script>-->
             <paper-card>
                 <a href$="{{item.url}}"><iron-image style="width: 250px; background: #333; height:230px;" sizing="cover" preload fade src="{{item.image}}"></iron-image></a>
                 <div class="card-content">
@@ -81,11 +87,10 @@
         }
     },
         listeners: {
-      'tap': 'computeUrl(strain)'
+      'searchit.click': 'computeUrl(strain)'
     },
     computeUrl: function (strain) {
-        console.log(['https://www.cannabisreports.com/api/v1.0/strains/search/' + strain]);
-        return ['https://www.cannabisreports.com/api/v1.0/strains/search/' + strain];
+        return ['https://www.cannabisreports.com/api/v1.0/strains/search/'  + strain];
     }
     // https://www.cannabisreports.com/api/v1.0/strains/search/kush
 });

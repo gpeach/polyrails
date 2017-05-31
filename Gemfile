@@ -53,6 +53,7 @@ group :development, :test do
   gem 'simplecov'
   gem 'rspec-rails'
   gem 'factory_girl'
+  gem 'pry-rails'
 end
 
 group :development do

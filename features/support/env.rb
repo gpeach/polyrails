@@ -20,14 +20,27 @@ require 'spinach/frameworks/rspec'
 #end
 #
 #require Rails.root.join("features/steps/common_steps/base")
+Capybara::Screenshot.register_driver(:chrome) do |driver, path|
+  driver.browser.save_screenshot(path)
+end
 
-Capybara.javascript_driver = :selenium
+Capybara.register_driver :chrome do |app|
+  Capybara::Selenium::Driver.new(app, :browser => :chrome)
+end
+
+Capybara.javascript_driver = :chrome
+#Capybara.javascript_driver = :webkit
+#Capybara.javascript_driver = :selenium
+
 Capybara.default_max_wait_time = (ENV["CAPYBARA_WAIT_TIME"] || 15).to_i
 Capybara.wait_on_first_by_default = true
+Capybara.default_selector = :css
 
   Capybara::Webkit.configure do |config|
-    config.allow_url("fonts.googleapis.com")
-    config.allow_url("www.cannabisreports.com")
+    #config.debug = true
+    config.allow_unknown_urls
+    #config.allow_url("fonts.googleapis.com")
+    #config.allow_url("www.cannabisreports.com")
   end
 
 require "database_cleaner"

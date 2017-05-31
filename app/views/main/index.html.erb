@@ -7,7 +7,6 @@
         background-image: url('<%= image_url("fwbg.png") %>');
     }
     .searchBar {
-        background: grey;
         margin: 8px auto;
         width: 300px;
     }
@@ -22,15 +21,15 @@
         margin: 1em;
     }
 </style>
-
 <template is="dom-bind">
-    <form>
-    <div class="searchBar">
-        <input id="strain" type='text' placeholder="search by strain" value="{{strain::change}}">
+    <div id="bar" class="searchBar">
+      
+        <input type='text' id="strain" placeholder="search by strain" value="{{strain::change}}">
+        <button id="searchit">Search</button>
+       
     </div>
-    <button id="search" type="submit">strain search</button>
-    </form>
-    <div class="results">
+    <div id="results" class="results">
         <gpeach-polymer-training strain="{{strain}}"></gpeach-polymer-training>
     </div>
 </template>
+

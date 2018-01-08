@@ -16,10 +16,19 @@
 # users commonly want.
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
+
+require File.expand_path("../../config/environment", __FILE__)
+require 'rspec/rails'
+
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest
   # assertions if you prefer.
+  
+ config.fixture_path = "#{::Rails.root}/spec/fixtures"
+ config.use_transactional_fixtures = true
+ config.infer_base_class_for_anonymous_controllers = false
+ config.order = "random" 
   
   config.include Capybara::DSL
   config.include Capybara::RSpecMatchers

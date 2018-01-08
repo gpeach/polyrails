@@ -5,7 +5,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-ruby "2.3.0"
+ruby "2.3.3"
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.2'
 # Use mysql as the database for Active Record
@@ -47,12 +47,13 @@ group :development, :test do
   gem 'spinach-rails'
   gem 'capybara'
   gem 'selenium-webdriver'
-  gem 'capybara-webkit'
-  gem 'capybara-screenshot'
+#  gem 'capybara-webkit'
+#  gem 'capybara-screenshot'
   gem 'database_cleaner'
   gem 'simplecov'
   gem 'rspec-rails'
-  gem 'factory_girl'
+  gem 'factory_bot'
+  gem 'nokogiri', '~> 1.8.1'
   gem 'pry-rails'
 end
 
